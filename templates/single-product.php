@@ -47,6 +47,10 @@ get_header( 'shop' ); ?>
     woocommerce_get_template_part( 'content', 'single-product-spa-beauty' );
 } elseif (is_product_category( 'venue' ) {
     woocommerce_get_template_part( 'content', 'single-product-venue' );
+} elseif (is_product_category( 'treatment-type' ) {
+    woocommerce_get_template_part( 'content', 'single-product-treatment-type' );
+} elseif (is_product_category( 'regions' ) {
+    woocommerce_get_template_part( 'content', 'single-product-regions' );
 } else {
     woocommerce_get_template_part( 'content', 'single-product' );
 }  ?>
