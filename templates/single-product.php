@@ -17,8 +17,6 @@ get_header( 'shop' ); ?>
 
 /**
  *Theme functions for pamperme
- *
- *
  */
     <?php if ( of_get_option( 'tokopress_page_header_style' ) != 'inner' ) : ?>
 	<div class="page-header page-header-outer">
@@ -45,7 +43,11 @@ get_header( 'shop' ); ?>
 
 		<?php while ( have_posts() ) : the_post(); ?>
 
-			<?php wc_get_template_part( 'content', 'single-product' ); ?>
+			<?php if (is_product_category( 'spa-beauty' ) {
+    woocommerce_get_template_part( 'content', 'single-product-spa-beauty' );
+}else{
+    woocommerce_get_template_part( 'content', 'single-product' );
+}  ?>
 
 		<?php endwhile; // end of the loop. ?>
 
