@@ -45,7 +45,9 @@ get_header( 'shop' ); ?>
 
 			<?php if (is_product_category( 'spa-beauty' ) {
     woocommerce_get_template_part( 'content', 'single-product-spa-beauty' );
-}else{
+} elseif (is_product_category( 'venue' ) {
+    woocommerce_get_template_part( 'content', 'single-product-venue' );
+} else {
     woocommerce_get_template_part( 'content', 'single-product' );
 }  ?>
 
