@@ -60,14 +60,21 @@ get_header( 'shop' ); ?>
 		do_action( 'woocommerce_after_main_content' );
 	?>
 
-	<?php
 		/**
 		 * woocommerce_sidebar hook
-		 *
-		 * @hooked woocommerce_get_sidebar - 10
 		 */
-		do_action( 'woocommerce_sidebar' );
-	?>
+
+	<aside class="widget-area sidebar wc-main-content-right" id="secondary" role="complementary">
+
+			<div class="product-calltoaction">
+
+				<?php do_action( 'tokopress_wc_product_calltoaction' ); ?>
+
+			</div>
+
+			<?php do_action( 'tokopress_wc_main_content_right' ); ?>
+
+		</aside>
     
     </div>
 
