@@ -15,6 +15,24 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 get_header( 'shop' ); ?>
 
+/**
+ *Theme functions for pamperme
+ *
+ *
+ */
+    <?php if ( of_get_option( 'tokopress_page_header_style' ) != 'inner' ) : ?>
+	<div class="page-header page-header-outer">
+		<h1 class="page-title"><?php the_title(); ?></h1>
+		<?php woocommerce_breadcrumb(); ?>
+	</div>
+<?php endif; ?>
+
+<?php do_action( 'tokopress_before_inner_content' ); ?>
+
+	<?php do_action( 'tokopress_wc_before_single_product' ); ?>
+	
+	<div <?php post_class(); ?>>
+		
 	<?php
 		/**
 		 * woocommerce_before_main_content hook
@@ -48,5 +66,11 @@ get_header( 'shop' ); ?>
 		 */
 		do_action( 'woocommerce_sidebar' );
 	?>
+    
+    </div>
+
+	<?php do_action( 'tokopress_wc_after_single_product' ); ?>
+
+<?php do_action( 'tokopress_after_inner_content' ); ?>
 
 <?php get_footer( 'shop' ); ?>
